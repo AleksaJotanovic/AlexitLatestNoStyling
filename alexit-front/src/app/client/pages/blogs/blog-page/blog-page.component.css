@@ -1,0 +1,103 @@
+/* ===========================================================
+==================== BLOG SECTION ================================
+================================================================== */
+.blog-section {
+    width: 100%;
+    padding-top: 1.5rem;
+    gap: 2rem;
+}
+
+.breadcrumbs>ul {
+    gap: 0.7rem;
+}
+
+.breadcrumbs li {
+    gap: 0.7rem;
+}
+
+.breadcrumbs i {
+    font-size: 0.5rem;
+}
+
+.breadcrumbs a {
+    font-size: 0.85rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: var(--dark-light);
+}
+
+.blog-header {
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-grey);
+    padding-bottom: 1rem;
+}
+
+.blog-header>h1 {
+    font-weight: 200;
+    letter-spacing: 4px;
+    font-size: clamp(1.3rem, 2.1vw, 2.1rem);
+    color: var(--main-black);
+}
+
+.blog-header>div>h2 {
+    font-size: 0.925rem;
+    font-weight: 200;
+    color: var(--dark-light);
+    letter-spacing: 2px;
+}
+
+.blog-header strong {
+    color: var(--main-black);
+}
+
+.blog-header :is(strong, small) {
+    font-style: italic;
+}
+
+.single-image {
+    width: 100%;
+    aspect-ratio: 30 / 9;
+}
+
+.single-image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-text {
+    font-weight: 200;
+    color: var(--dark-light);
+    letter-spacing: 2px;
+    font-size: clamp(12px, 1vw, 0.9rem);
+    line-height: 1.8;
+}
+
+.blog-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.blog-gallery>picture {
+    aspect-ratio: 16 / 9;
+}
+
+.blog-gallery>picture>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.text-with-heading {
+    gap: 0.5rem;
+}
+
+.blot-content-title {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-grey);
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: var(--main-black);
+    letter-spacing: 4px;
+}

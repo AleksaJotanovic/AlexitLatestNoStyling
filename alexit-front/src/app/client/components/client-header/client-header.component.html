@@ -1,0 +1,71 @@
+<header #header class="cl-header">
+    <nav class="navbar">
+        <div>
+            <h1>ALEXIT</h1>
+        </div>
+        <div><input type="text" placeholder="Search..."></div>
+        <div class="main-nav-links">
+            <div>
+                <a routerLink="cart">Cart</a>
+                <h5>{{totalQuantity}}</h5>
+            </div>
+            @if (user) {
+            <button type="button" (click)="accountDropdownDisplay = !accountDropdownDisplay">{{user.username}}</button>
+            }@else {
+            <div>
+                <button type="button" (click)="modal.style.display='block'">Sign In</button>
+            </div>
+            }
+        </div>
+        <div class="account-dropdown-options" [ngStyle]="{'display': accountDropdownDisplay ? 'flex' : 'none'}">
+            <a routerLink="account" (click)="accountDropdownDisplay = false">My Account</a>
+            <button type="button" (click)="signout(); accountDropdownDisplay = false">Sign Out</button>
+        </div>
+    </nav>
+    <div #afternav class="after-nav">
+        <div>
+            <button type="button" (click)="isMenuOpened = !isMenuOpened">
+                <h3>Products</h3>
+            </button>
+        </div>
+        <div class="categories-menu" [ngStyle]="{'display': isMenuOpened ? 'flex': 'none'}">
+            @for ( category of (categories | ptIf); track $index) {
+            <button type="button" (pointerenter)="setDropdownCategories(category._id)">
+                <h3>{{category.name}} ></h3>
+            </button>
+            }
+        </div>
+        <div class="dropdown-menu" [ngStyle]="{'display': isDropdownOpened ? 'grid': 'none'}"
+            (pointerleave)="isDropdownOpened = false">
+            @for (category of dropdownCategories; track $index) {
+            <div class="product-card" (click)="isDropdownOpened=false;isMenuOpened=false;"
+                [routerLink]="['products', category.name, category._id]">
+                <img [src]="category.image" alt="Product Image" class="product-image">
+                <div class="product-details">
+                    <h2 class="product-name">{{category.name}}</h2>
+                </div>
+            </div>
+            }
+        </div>
+        <div>
+            <ul>
+                <li><a [routerLink]="['']">Home</a></li>
+                <li><a [routerLink]="['offers']">Offers</a></li>
+                <li><a [routerLink]="['configurator']">Configurator</a></li>
+                <li><a [routerLink]="['blogs']">Blogs</a></li>
+                <li><a [routerLink]="['contact']">Contact</a></li>
+                <li><a [routerLink]="['about-us']">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div #modal class="modal">
+    <div class="modal-content">
+        <button type="button" (click)="modal.style.display='none'">Close</button>
+        <button type="button" (click)="hasAccount=true">Login</button>
+        <button type="button" (click)="hasAccount=false">Register</button>
+        <customer-registration (onRegistration)="register($event)" (onLogin)="login($event)"
+            [hasAccount]="hasAccount" />
+    </div>
+</div>

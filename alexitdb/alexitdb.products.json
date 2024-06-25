@@ -1,0 +1,100 @@
+[{
+  "_id": "6c5b952a-f4a7-422c-ba9f-fc1fb2a628ac",
+  "category": {
+    "_id": "937d1e01-4984-460a-9ff3-217785cd1b44",
+    "name": "GPUs"
+  },
+  "name": "Aleksa",
+  "uom": "JEAAHHHH",
+  "sku": "lakdsjafasdlkfj",
+  "price": {
+    "margin": 30,
+    "purchase": 130895,
+    "regular": 170164,
+    "sale": 204197,
+    "earning": 51049,
+    "onDiscount": {
+      "state": false,
+      "rate": 0
+    }
+  },
+  "images": [
+    "http://localhost:3000/products/1719049725901-414930734.png",
+    "http://localhost:3000/products/1719049725907-706336828.png",
+    "http://localhost:3000/products/1719049725911-955725690.png"
+  ],
+  "specifications": [
+    {
+      "key": "Manufacturer",
+      "value": "Microstar"
+    },
+    {
+      "key": "Memory bus width",
+      "value": "32-bit"
+    },
+    {
+      "key": "Memory type",
+      "value": "HBM2"
+    },
+    {
+      "key": "Memory size",
+      "value": "2 GB"
+    }
+  ],
+  "inStock": 15,
+  "weight": 0.9,
+  "garantee": "3",
+  "published": true
+},
+{
+  "_id": "0a3f22ad-4ebe-4e94-98c1-a8fecad27ced",
+  "category": {
+    "_id": "9bbec1de-d65e-4572-b599-7610efb667a3",
+    "name": "Motherboards"
+  },
+  "name": "asdjkl;;adf",
+  "uom": "a;lskdjfladsjflk",
+  "sku": "a;dklsjfalskdjfl;k",
+  "price": {
+    "margin": 30,
+    "purchase": 613245,
+    "regular": 797219,
+    "sale": 956663,
+    "earning": 239166,
+    "onDiscount": {
+      "state": false,
+      "rate": 0
+    }
+  },
+  "images": [
+    "http://localhost:3000/products/1719167549801-952245578.jpeg",
+    "http://localhost:3000/products/1719167549835-160567224.jpeg",
+    "http://localhost:3000/products/1719167549858-58705787.jpeg"
+  ],
+  "specifications": [
+    {
+      "key": "Manufacturer",
+      "value": "AsRock"
+    },
+    {
+      "key": "Socket",
+      "value": "LGA 2066"
+    },
+    {
+      "key": "Memory slots",
+      "value": "4"
+    },
+    {
+      "key": "Supported memory",
+      "value": "DDR5"
+    },
+    {
+      "key": "Dimensions",
+      "value": "Micro-ATX"
+    }
+  ],
+  "inStock": 13,
+  "weight": 0.5,
+  "garantee": "3",
+  "published": false
+}]

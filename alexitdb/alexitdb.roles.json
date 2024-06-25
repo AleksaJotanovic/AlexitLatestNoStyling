@@ -1,0 +1,12 @@
+[{
+  "_id": "4a55e91e-8784-4755-8a84-67e40d6ab5aa",
+  "name": "Cashier"
+},
+{
+  "_id": "ece96e0b-3bf4-4252-8d61-4aa840c89515",
+  "name": "Admin"
+},
+{
+  "_id": "564b5e4a-1701-4256-be13-2cf87c5f0da8",
+  "name": "Customer"
+}]

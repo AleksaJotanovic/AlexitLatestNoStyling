@@ -1,0 +1,15 @@
+/* -------------- */
+.categories-body {
+    width: 100%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.categories-header {}
+
+.categories-container {}
+
+* {
+    border: 1px dashed red;
+}

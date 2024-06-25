@@ -1,0 +1,48 @@
+<section class="blog-section column-center-stretch">
+    <div class="breadcrumbs row-start">
+        <ul class="row-center">
+            <li class="lineheight-fit row-center">
+                <a href="../../../index.html" class="lineheight-fit">Home</a>
+                <i class="fa-light fa-chevron-right"></i>
+            </li>
+            <li class="lineheight-fit row-center">
+                <a href="../blogs.html" class="lineheight-fit">Blogs</a>
+                <i class="fa-light fa-chevron-right"></i>
+            </li>
+            <li class="lineheight-fit row-center">
+                <a href="offer.html">A title of the blog</a>
+            </li>
+        </ul>
+    </div>
+
+    @if (blog !== undefined) {
+    <div class="blog-header column-center-stretch">
+        <h1>{{blog.title}}</h1>
+        <div class="row-space-between">
+            <h2 class="lineheight-fit">
+                <small class="lineheight-fit">Blog published on:
+                    <strong class="lineheight-fit">05.12.2024</strong>
+                </small>
+            </h2>
+        </div>
+    </div>
+
+    <picture class="single-image"><img [src]="blog.featuredImage"></picture>
+    @for (item of blog.content; track $index) {
+    @if (item.key === contentItemTypes.TEXT) {
+    <p class="blog-text">{{item.value[0]}}</p>
+    }@else if (item.key === contentItemTypes.HEADING) {
+    <h1 class="blot-content-title">{{item.value[0]}}</h1>
+    }@else if (item.key === contentItemTypes.IMAGE) {
+    <picture class="single-image"><img [src]="item.value[0]"></picture>
+    }@else if (item.key === contentItemTypes.GALLERY) {
+    <div class="blog-gallery">
+        <picture><img [src]="item.value[0]"></picture>
+        <picture><img [src]="item.value[1]"></picture>
+        <picture><img [src]="item.value[2]"></picture>
+    </div>
+    }
+    }
+    }
+
+</section>

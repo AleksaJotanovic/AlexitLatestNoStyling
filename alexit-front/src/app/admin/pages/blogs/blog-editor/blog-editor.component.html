@@ -1,0 +1,65 @@
+<div class="editor-container">
+    <div class="form-header">
+        <button type="button" mat-raised-button (click)="publish()">Publish</button>
+        <button type="button" mat-raised-button>Save Draft</button>
+        <mat-form-field>
+            <mat-label>Choose or add blog topic</mat-label>
+            <mat-select [(ngModel)]="blog.topic_id">
+                @for (topic of blogTopics; track $index) {
+                <mat-option [value]="topic._id">{{topic.name}}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="blog-form-main">
+        <textarea #textarea placeholder="Add title" [(ngModel)]="blog.title" class="title-area"
+            (input)="fitTextareaDimensions($event)"></textarea>
+        <div class="featured-image">
+            <input type="file" (change)="uploadFeaturedImage($event, featuredImage)" (click)="resetFileInput($event)">
+            <picture>
+                <img #featuredImage [src]="blog.featuredImage">
+            </picture>
+        </div>
+        <div class="main-content">
+            @for (item of blog.content; track $index) {
+            @if (item.key === contentItemTypes.HEADING) {
+            <textarea #textarea placeholder="Type heading" class="heading-area" [(ngModel)]="item.value[0]"
+                [id]="item._id" (input)="fitTextareaDimensions($event)"></textarea>
+            }@else if (item.key === contentItemTypes.TEXT) {
+            <textarea #textarea placeholder="Type text" class="text-area" [(ngModel)]="item.value[0]" [id]="item._id"
+                (input)="fitTextareaDimensions($event)"></textarea>
+            }@else if (item.key === contentItemTypes.IMAGE) {
+            <div class="content-image" [id]="item._id">
+                <input [id]="item._id" type="file" (change)="uploadContentImage($event, contentImage)"
+                    (click)="resetFileInput($event)">
+                <picture>
+                    <img [id]="item._id" #contentImage [src]="item.value[0]">
+                </picture>
+            </div>
+            }@else if (item.key === contentItemTypes.GALLERY) {
+            <div class="gallery">
+                <input type="file" multiple [id]="item._id"
+                    (change)="uploadGallery($event, glrImage1, glrImage2, glrImage3)">
+                <div>
+                    <picture><img [id]="item._id" #glrImage1 [src]="item.value[0]"></picture>
+                    <picture><img [id]="item._id" #glrImage2 [src]="item.value[1]"></picture>
+                    <picture><img [id]="item._id" #glrImage3 [src]="item.value[2]"></picture>
+                </div>
+            </div>
+            }
+            }
+        </div>
+        <div class="item-buttons">
+            <button type="button" [id]="contentItemTypes.HEADING" mat-raised-button class="item-appender"
+                (click)="addContentItem($event)">add
+                heading</button>
+            <button type="button" [id]="contentItemTypes.TEXT" mat-raised-button class="item-appender"
+                (click)="addContentItem($event)">add text</button>
+            <button type="button" [id]="contentItemTypes.IMAGE" mat-raised-button class="item-appender"
+                (click)="addContentItem($event)">add image</button>
+            <button type="button" [id]="contentItemTypes.GALLERY" mat-raised-button class="item-appender"
+                (click)="addContentItem($event)">add gallery</button>
+        </div>
+    </div>
+
+</div>

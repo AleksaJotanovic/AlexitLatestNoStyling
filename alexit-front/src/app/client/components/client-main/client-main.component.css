@@ -1,0 +1,64 @@
+section {
+    height: 85vh;
+}
+
+.animated {
+    background-color: rgb(50, 50, 214);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated>div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.banner {
+    background-color: rgb(197, 55, 55);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.banner>div {
+    width: 100%;
+}
+
+.discounts {
+    background-color: rgb(216, 247, 80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.configurator-link {
+    background-color: rgb(155, 63, 192);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.latest-blogs {
+    background-color: rgb(138, 53, 53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-section {
+    background-color: rgb(80, 222, 247);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.on-scroll {
+    height: 90vh;
+}

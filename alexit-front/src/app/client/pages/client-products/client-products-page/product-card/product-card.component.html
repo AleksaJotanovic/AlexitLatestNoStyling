@@ -1,0 +1,11 @@
+<div class="product-card">
+    <img [src]="product.images[0]" alt="Product Image" class="product-image"
+        [routerLink]="['/product', product._id, product.name]">
+    <div class="product-details">
+        <h2 class="product-name">{{product.name}}</h2>
+        <p class="product-price">${{product.price.sale}}</p>
+        <button type="button" class="choose-button" (click)="emitOnAddToCart()">Add To Cart</button>
+        <button type="button" class="choose-button" (click)="emitOnAddToFavorites(product._id)"><i
+                class="gg-heart"></i></button>
+    </div>
+</div>

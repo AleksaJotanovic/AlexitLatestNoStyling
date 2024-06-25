@@ -1,0 +1,32 @@
+[{
+  "_id": "97133460-e957-469e-aafc-54a62c7060d1",
+  "category_id": "electronics",
+  "title": "Summer Sale on Smartphones THAT YOU'LL NEVER GET YOU FUCKING LOSER",
+  "featuredImage": "https://example.com/images/summer-sale-smartphones.jpg",
+  "content": [
+    {
+      "key": "JEBENI TEKST",
+      "value": [
+        "Enjoy up to 50% off on the latest smartphones this summer."
+      ]
+    },
+    {
+      "key": "terms",
+      "value": [
+        "Offer valid while stocks last.",
+        "Terms and conditions apply."
+      ]
+    }
+  ],
+  "products": [
+    "MAMA",
+    "TATA",
+    "PICKAMATERINAVISE"
+  ],
+  "discountImpact": {
+    "state": true,
+    "rate": 0.5
+  },
+  "expiration": "2024-07-31",
+  "published": true
+}]

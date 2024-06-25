@@ -1,0 +1,24 @@
+<div class="cart">
+    @for (item of cart; track $index) {
+    <div class="cart-item">
+        <img [src]="item.product.images[0]" alt="Product Image">
+        <div class="details">
+            <h2>{{item.product.name}}</h2>
+            <div class="quantity">
+                <button type="button" (click)="decrementQuantity(item)">-</button>
+                <input type="number" min="0" readonly [(ngModel)]="item.quantity">
+                <button type="button" (click)="incrementQuantity(item.product)">+</button>
+            </div>
+            <p class="price">{{withCommas((item.quantity * item.product.price.sale))}}</p>
+        </div>
+    </div>
+    }
+
+    <div class="summary">
+        <p>Total:</p>
+        <p class="value">{{withCommas(totalPrice)}}</p>
+    </div>
+
+    <button type="button" class="go-to-payment" (click)="goToPayment()">Go To Payment</button>
+
+</div>

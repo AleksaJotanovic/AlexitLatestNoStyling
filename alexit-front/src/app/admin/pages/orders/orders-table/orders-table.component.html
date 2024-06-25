@@ -1,0 +1,48 @@
+<div class="orders-body">
+
+    <div class="table-options">
+        <div class="option-1">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="option-2">
+            <label>Status</label>
+            <select>
+                <option value="">Shoes</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="orders-container">
+        <h3>Narucene komponente</h3>
+        <table class="zui-table">
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Purchased</th>
+                    <th>Ship To</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (order of orders; track $index) {
+                <tr>
+                    <td>{{'#' + order.number + ' by ' + order.user.username}}</td>
+                    <td>{{order.items.length}} Items</td>
+                    <td>{{order.shipping.city}}</td>
+                    <td>{{toDate(order.creationTime)}}</td>
+                    <td>{{withCommas(order.grandTotal)}} RSD</td>
+                    <td>
+                        <button type="button" [routerLink]="['/admin/orders/order', order._id]">View</button>
+                        <button type="button" (click)="delete(order._id)">Delete</button>
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

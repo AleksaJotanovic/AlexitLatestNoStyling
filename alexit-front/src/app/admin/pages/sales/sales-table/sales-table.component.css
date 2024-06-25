@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    /* Added for better styling */
+}
+
+table td,
+table th {
+    padding: 1px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table th {
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+tfoot {
+    background-color: #04AA6D;
+}
+
+.summary {
+    display: flex;
+    gap: 1rem;
+}
+
+.summary>div {
+    display: flex;
+    gap: 8px;
+}

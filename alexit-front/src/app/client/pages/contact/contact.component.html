@@ -1,0 +1,11 @@
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <form [formGroup]="contactForm" action="#" method="post" (ngSubmit)="sendContactMessage()">
+        <input type="text" placeholder="Your Name" required formControlName="name">
+        <input type="email" placeholder="Your Email" required formControlName="email">
+        <input type="url" placeholder="Github link to your project - must start with: https://github.com/" required
+            formControlName="portfolio" pattern="https:\/\/github\.com\/.*">
+        <textarea rows="5" placeholder="Your Message" required formControlName="message"></textarea>
+        <button type="submit" [disabled]="!contactForm.valid">Send Message</button>
+    </form>
+</section>

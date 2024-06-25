@@ -1,0 +1,89 @@
+@if (order !== undefined) {
+<section class="checkout-section">
+    <div>
+        <h1>Customer data</h1>
+        <p>Aleksa Jotanovic</p>
+        <p>Krajiska 14</p>
+        <p>Futog, 21410</p>
+        <p>Srbija</p>
+        <p>0658891631</p>
+        <div>
+            <h1>Courier</h1>
+            <label for="courier">Choose Courier</label>
+            <select id="courier" [(ngModel)]="choosenCourier" (ngModelChange)="setCourier()">
+                @for (courier of couriers; track $index) {
+                <option [ngValue]="courier">{{courier.name}}</option>
+                }
+            </select>
+        </div>
+        <div>
+            <h1>Payment Method</h1>
+            <select [(ngModel)]="paymentMethod">
+                <option [ngValue]="{creditCard: true, cashOnDelivery: false}">Credit Card</option>
+                <option [ngValue]="{creditCard: false, cashOnDelivery: true}">Cash On Delivery</option>
+            </select>
+        </div>
+
+        @if (paymentMethod.creditCard && !paymentMethod.cashOnDelivery) {
+        <div class="container mt-5">
+            <div class="card">
+                <form class="card-body" [formGroup]="creditCardForm" (ngSubmit)="addUserCreditCard()">
+                    <h2 class="card-title">Credit Card Payment</h2>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" formControlName="number" class="form-control" required
+                            mask="0000-0000-0000-0000" [showMaskTyped]="true" [showTemplate]="true">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" formControlName="expiryDate" class="form-control"
+                                required mask="00/00" [showMaskTyped]="true" [showTemplate]="true" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" formControlName="cvv" class="form-control" required mask="000"
+                                [showMaskTyped]="true" [showTemplate]="true" placeholder="XXX">
+                        </div>
+                    </div>
+                    @if (arePropertiesEmpty(user.creditCard)) {
+                    <input type="submit" value="Add Credit Card">
+                    }
+                </form>
+            </div>
+        </div>
+        }
+
+
+    </div>
+    <div class="div-2">
+        <div class="card animated">
+            <div class="product-list">
+                @for (item of order.items; track $index) {
+                <div class="cart-item">
+                    <img [src]="item.image" alt="Product Image">
+                    <div class="details">
+                        <h2>{{item.name}}</h2>
+                        <div class="quantity">
+                            <input type="number" [value]="item.quantity" min="1" readonly>
+                        </div>
+                        <p class="price">{{item.price}}</p>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="details">
+                <p>Subtotal:..................{{money(order.subtotal)}}</p>
+                <p>Shipping:..................{{money(order.shippingCost)}}</p>
+                <p>Total Payment:.............{{money(order.subtotal + order.shippingCost)}}</p>
+            </div>
+            <div class="note">
+                <label for="note">Note:</label><br>
+                <textarea id="note" rows="4" cols="50" placeholder="Write something about your order"
+                    [(ngModel)]="order.user.note"></textarea>
+            </div>
+            <button type="button" class="pay-and-order" (click)="sendOrder()">Order</button>
+        </div>
+    </div>
+</section>
+}

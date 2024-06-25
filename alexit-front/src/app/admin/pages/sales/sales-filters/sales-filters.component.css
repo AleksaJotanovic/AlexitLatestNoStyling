@@ -1,0 +1,9 @@
+.sales-filters>.form {
+    display: flex;
+    gap: 1rem;
+}
+
+.sales-filters>.form>div {
+    display: flex;
+    gap: 8px;
+}

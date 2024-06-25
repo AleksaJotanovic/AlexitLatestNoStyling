@@ -1,0 +1,19 @@
+<div class="filters-container">
+    @for (spec of category.specifications; track $index) {
+    <div class="filter-collapse">
+        <button type="button" (click)="collapseFilters(collapser)">
+            <h1>{{spec.key}}</h1>
+        </button>
+        <div #collapser class="collapser">
+            <div class="filters-list">
+                @for (val of spec.values; track $index) {
+                <div>
+                    <label>{{val}}</label>
+                    <input type="checkbox" [value]="val" (change)="emitOnFilterSelect(spec.key, val, $event.target)">
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,63 @@
+<div class="order-row">
+    <div class="order-title">
+        <h1>Order #{{order.number}} Details</h1>
+        @if (!order.saleGenerated) {
+        <button type="button" (click)="emitOnSaleGenerate()" [disabled]="!order.paid">
+            <h1>Generate Sale</h1>
+        </button>
+        }@else {
+        <p>Sale generated!</p>
+        }
+    </div>
+    <div class="general">
+        <h3>General</h3>
+        <p>Order number: <strong>#{{order.number}}</strong></p>
+        <p>Date Created: <small>{{toDate(order.creationTime).toLocaleDateString()}}</small></p>
+
+        @if (order.pcBuild) {
+        <p>PC Build Name: <small>{{order.pcBuildName}}</small></p>
+        }
+
+        @if (order.accountingSent) {
+        <form [formGroup]="updateForm" (ngSubmit)="emitOnUpdate()">
+            <div style="display: flex; flex-direction: row; gap: 1rem;">
+                <h3>Paid:</h3>
+                <div>
+                    <label for="paidTrue">Yes</label>
+                    <input id="paidTrue" type="radio" [value]="true" formControlName="isPaid">
+                </div>
+                <div>
+                    <label for="paidFalse">No</label>
+                    <input id="paidFalse" type="radio" [value]="false" formControlName="isPaid">
+                </div>
+            </div>
+            <div>
+                <label>Status: </label>
+                <select formControlName="orderStatus" (change)="statusChanged = true">
+                    @for (status of orderStatusList; track $index) {
+                    <option [ngValue]="status.value">{{status.value}}</option>
+                    }
+                </select>
+            </div>
+            <div class="status-note">
+                <label>Status Update Message:</label>
+                <textarea cols="30" rows="10" formControlName="orderStatusMessage"></textarea>
+            </div>
+            <button type="submit">Update Order</button>
+        </form>
+        }
+
+    </div>
+    <div class="shipping">
+        <h3>Shipping</h3>
+        <p>{{order.shipping.country}}</p>
+        <p>{{order.shipping.city}}</p>
+        <p>{{order.shipping.street}}</p>
+        <p>Email: <small><a href="#">{{order.shipping.email}}</a></small></p>
+        <p>Phone: <small>{{order.shipping.phone}}</small></p>
+        <p>Customer provided note: <br><small>{{order.user.note}}</small></p>
+        <hr>
+        <h3>Courier:</h3>
+        <h4>{{order.courier.name}}</h4>
+    </div>
+</div>

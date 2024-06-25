@@ -1,0 +1,96 @@
+<div class="configurator-cart">
+    <div class="title"></div>
+    <table>
+        <thead>
+            <tr>
+                <td>Image</td>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (item of order.items; track $index) {
+            <tr>
+                <td><img [src]="item.image" alt="product" width="50" height="50"></td>
+                <td>{{item.name}}</td>
+                <td>{{money(item.price)}}</td>
+            </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="footer">Subtotal: {{money(order.subtotal)}}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="footer">Shipping: {{money(order.shippingCost)}}</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="footer">Total Payment: {{money(order.subtotal + order.shippingCost)}}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="footer">
+        <label for="courier">Choose Courier</label>
+        <select id="courier" [(ngModel)]="choosenCourier" (ngModelChange)="setCourier()">
+            @for (courier of couriers; track $index) {
+            <option [ngValue]="courier">{{courier.name}}</option>
+            }
+        </select>
+    </div>
+    <div class="footer">
+        <label for="paymentMethod">Payment method</label>
+        <select id="paymentMethod" [(ngModel)]="paymentMethod">
+            <option [ngValue]="{creditCard: true, cashOnDelivery: false}">Credit Card
+            </option>
+            <option [ngValue]="{creditCard: false, cashOnDelivery: true}">Cash On Delivery
+            </option>
+        </select>
+    </div>
+    <div class="footer">
+        <label for="note">Note:</label>
+        <textarea name="note" id="" cols="30" rows="10" [(ngModel)]="order.user.note"></textarea>
+    </div>
+
+    <button type="button" class="go-to-payment" (click)="sendOrder()">Order</button>
+</div>
+
+
+
+
+
+<div #modal class="modal"
+    [ngStyle]="{'display': (paymentMethod.creditCard && !paymentMethod.cashOnDelivery) ? 'block' : 'none'}">
+    <div class="modal-content">
+        <button type="button" (click)="modal.style.display='none'">Close</button>
+        @if (paymentMethod.creditCard && !paymentMethod.cashOnDelivery) {
+        <div class="container mt-5">
+            <div class="card">
+                <form class="card-body" [formGroup]="creditCardForm" (ngSubmit)="addUserCreditCard()">
+                    <h2 class="card-title">Credit Card Payment</h2>
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" formControlName="number" class="form-control" required
+                            mask="0000-0000-0000-0000" [showMaskTyped]="true" [showTemplate]="true">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" formControlName="expiryDate" class="form-control"
+                                required mask="00/00" [showMaskTyped]="true" [showTemplate]="true" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" formControlName="cvv" class="form-control" required mask="000"
+                                [showMaskTyped]="true" [showTemplate]="true" placeholder="XXX">
+                        </div>
+                    </div>
+                    @if (arePropertiesEmpty(user.creditCard)) {
+                    <input type="submit" value="Add Credit Card">
+                    }
+                </form>
+            </div>
+        </div>
+        }
+    </div>
+</div>

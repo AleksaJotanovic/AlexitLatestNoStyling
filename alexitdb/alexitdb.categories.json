@@ -1,0 +1,153 @@
+[{
+  "_id": "64a871ee-267d-470b-a448-ebbe1c609127",
+  "name": "Components",
+  "parent": {
+    "_id": "",
+    "name": ""
+  },
+  "specifications": [],
+  "image": "http://localhost:3000/categories/1718979671217-496714427.png"
+},
+{
+  "_id": "937d1e01-4984-460a-9ff3-217785cd1b44",
+  "name": "GPUs",
+  "parent": {
+    "_id": "64a871ee-267d-470b-a448-ebbe1c609127",
+    "name": "Components"
+  },
+  "specifications": [
+    {
+      "key": "Manufacturer",
+      "values": [
+        "Asus",
+        "AsRock",
+        "Biostar",
+        "Microstar",
+        "NVIDIA"
+      ]
+    },
+    {
+      "key": "Memory bus width",
+      "values": [
+        "32-bit",
+        "64-bit",
+        "96-bit",
+        "128-bit",
+        "160-bit",
+        "192-bit",
+        "256-bit",
+        "320-bit",
+        "352-bit",
+        "384-bit",
+        "448-bit",
+        "512-bit",
+        "1024-bit",
+        "2048-bit",
+        "2560-bit",
+        "3072-bit",
+        "4096-bit",
+        "5120-bit",
+        "6144-bit",
+        "8192-bit",
+        "System shared"
+      ]
+    },
+    {
+      "key": "Memory type",
+      "values": [
+        "DDR3",
+        "DDR4",
+        "DDR5",
+        "DDR6",
+        "GDDR6",
+        "HBM2"
+      ]
+    },
+    {
+      "key": "Memory size",
+      "values": [
+        "1 GB",
+        "2 GB",
+        "3 GB",
+        "4 GB",
+        "5 GB",
+        "6 GB",
+        "8 GB",
+        "10 GB",
+        "11 GB",
+        "12 GB",
+        "16 GB",
+        "20 GB",
+        "24 GB"
+      ]
+    }
+  ],
+  "image": "http://localhost:3000/categories/1718978233001-324801181.png"
+},
+{
+  "_id": "9bbec1de-d65e-4572-b599-7610efb667a3",
+  "name": "Motherboards",
+  "parent": {
+    "_id": "64a871ee-267d-470b-a448-ebbe1c609127",
+    "name": "Components"
+  },
+  "specifications": [
+    {
+      "key": "Manufacturer",
+      "values": [
+        "AFOX",
+        "AsRock",
+        "Asus",
+        "Biostar",
+        "Gigabyte",
+        "Microstar",
+        "NZXT"
+      ]
+    },
+    {
+      "key": "Socket",
+      "values": [
+        "LGA 1150",
+        "LGA 1151",
+        "LGA 1200",
+        "LGA 1700",
+        "LGA 2066",
+        "Socket AM3+",
+        "Socket AM3",
+        "Socket AM4",
+        "Socket AM5",
+        "Socket sTRX4",
+        "Socket TR4"
+      ]
+    },
+    {
+      "key": "Memory slots",
+      "values": [
+        "1",
+        "2",
+        "4",
+        "8"
+      ]
+    },
+    {
+      "key": "Supported memory",
+      "values": [
+        "DDR3",
+        "DDR4",
+        "DDR5"
+      ]
+    },
+    {
+      "key": "Dimensions",
+      "values": [
+        "ATX",
+        "E-ATX",
+        "mATX",
+        "Micro-ATX",
+        "Mini-STX",
+        "Mini-ITX"
+      ]
+    }
+  ],
+  "image": "http://localhost:3000/categories/1718996107539-37613770.png"
+}]

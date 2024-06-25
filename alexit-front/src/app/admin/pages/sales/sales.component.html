@@ -1,0 +1,7 @@
+<div class="sales-body">
+    <sales-filters [categories]="categories" (onCategoryFilter)="filterByCategory($event)"
+        (onCodeFilter)="filterByCode($event)" (onNameFilter)="filterByName($event)" (onDateRange)="filterByDateRange()"
+        [dateRange]="dateRange" />
+    <sales-table [sales]="sales" [categoryFilter]="categoryFilter" [codeFilter]="codeFilter" [nameFilter]="nameFilter"
+        [totals]="totals" (onSalesReportPrint)="printSalesReport()" />
+</div>

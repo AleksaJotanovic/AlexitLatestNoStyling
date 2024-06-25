@@ -1,0 +1,33 @@
+@if (hasAccount) {
+<div class="container">
+    <h2>User Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="emitOnLogin(loginForm)">
+        <input type="text" placeholder="Email" required formControlName="email">
+        <input type="password" placeholder="Password" required formControlName="password">
+        <input type="submit" value="Login">
+    </form>
+</div>
+}@else {
+<div class="container">
+    <h2>User Registration</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="emitOnRegistration(registrationForm)">
+        <div class="fl-name">
+            <input type="text" placeholder="First name" required formControlName="firstname">
+            <input type="text" placeholder="Last name" required formControlName="lastname">
+        </div>
+        <input type="text" placeholder="Username" required formControlName="username">
+        <input type="email" placeholder="Email" required formControlName="email">
+        <input type="password" placeholder="Password" required formControlName="password">
+        <h3>Shipping Adress</h3>
+        <div formGroupName="shippingAddress">
+            <input type="text" name="country" placeholder="Country" required formControlName="country">
+            <input type="text" name="city" placeholder="City" required formControlName="city">
+            <input type="text" name="street" placeholder="Street" required formControlName="street">
+            <input type="text" name="zip" placeholder="Zip Code" required formControlName="zip">
+            <input type="tel" name="phone" placeholder="Phone" required formControlName="phone">
+            <input type="email" name="email" placeholder="Email" required formControlName="email">
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</div>
+}

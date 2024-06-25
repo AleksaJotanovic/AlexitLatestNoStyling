@@ -1,0 +1,113 @@
+<div class="add-product-body">
+    <div class="add-product-form">
+        <form [formGroup]="productForm" (ngSubmit)="add(productImages)">
+
+
+
+
+
+            <div class="col">
+                <label>Choose Category:</label>
+                <select formControlName="category_id" (ngModelChange)="onCategorySelect($event)">
+                    <option value="" disabled selected hidden>--choose category--</option>
+                    @for (category of (categories | ctgIf); track $index) {
+                    <option [ngValue]="category._id">{{category.name}}
+                    </option>
+                    }
+                </select>
+            </div>
+
+            <div class="col" formArrayName="specifications">
+                <div *ngFor="let spec of selectedCategory.specifications; let i = index" [formGroupName]="i">
+                    <input type="text" formControlName="key">
+                    <select formControlName="value">
+                        <option *ngFor="let val of spec.values" [ngValue]="val">{{val}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col">
+                <label>Name:</label>
+                <input type="text" formControlName="name">
+            </div>
+            <div class="col">
+                <label>UOM:</label>
+                <input type="text" formControlName="uom">
+            </div>
+            <div class="col">
+                <label>SKU:</label>
+                <input type="text" formControlName="sku">
+            </div>
+            <div class="col" formGroupName="price">
+                <div>
+                    <label for="margin">Margin:</label>
+                    <input type="number" id="margin" formControlName="margin">
+                </div>
+                <div>
+                    <label for="purchase">Purchase value:</label>
+                    <input type="number" id="purchase" formControlName="purchase">
+                    <button type="button" (click)="countPrices()">Confirm</button>
+                </div>
+                <div>
+                    <label for="regular">Purchase price:</label>
+                    <input type="number" id="regular" formControlName="regular">
+                </div>
+                <div>
+                    <label for="sale">Sale price:</label>
+                    <input type="number" id="sale" formControlName="sale">
+                </div>
+                <div>
+                    <label for="earning">Earning:</label>
+                    <input type="number" id="earning" formControlName="earning">
+                </div>
+                <div formGroupName="onDiscount">
+                    <h3>Set product on discount:</h3>
+                    <div>
+                        <label for="state1">Yes</label>
+                        <input type="radio" id="state1" formControlName="state" [value]="true"
+                            (change)="isDiscountSet = true">
+
+                        <label for="state2">No</label>
+                        <input type="radio" id="state2" formControlName="state" [value]="false"
+                            (change)="isDiscountSet = false">
+                    </div>
+                    <div [ngStyle]="{'display': isDiscountSet ? 'block': 'none'}">
+                        <label for="rate">Discount Rate:</label>
+                        <input type="number" id="rate" formControlName="rate">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label>Count in stock: </label>
+                <input type="number" formControlName="inStock">
+            </div>
+            <div class="col">
+                <label>Weight: </label>
+                <input type="number" formControlName="weight">
+            </div>
+            <div class="col">
+                <label>Garantee: </label>
+                <input type="number" formControlName="garantee">
+            </div>
+            <div class="col">
+                <label>Upload Product Images: </label>
+                <input #productImages type="file" multiple>
+            </div>
+            <div class="col">
+                <h3>Publish: </h3>
+                <label for="published1">
+                    <input type="radio" formControlName="published" id="published1" [value]="true">
+                    Yes</label>
+                <label for="published2">
+                    <input type="radio" formControlName="published" id="published2" [value]="false">
+                    No</label>
+            </div>
+            <button type="submit">Save In Stock</button>
+            <button type="button">Cancel</button>
+        </form>
+    </div>
+</div>

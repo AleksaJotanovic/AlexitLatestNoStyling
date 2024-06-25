@@ -1,0 +1,85 @@
+<section class="configurator">
+    <div class="specs">
+        <div>
+            <h1>PC BUILD NAME:</h1>
+            <input type="text" placeholder="Pc Build Name..." [(ngModel)]="configuration.name">
+        </div>
+        <div>
+            <div class="component">
+                <img src="https://uxwing.com/wp-content/themes/uxwing/download/computers-mobile-hardware/cpu-icon.png"
+                    alt="cpu">
+                <h3>CPU</h3>
+                <button type="button" id="cpu" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/2729/2729134.png" alt="cpu">
+                <h3>Cooler</h3>
+                <button type="button" id="cooler" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/3962/3962832.png" alt="cpu">
+                <h3>Motherboard</h3>
+                <button type="button" id="motherboard" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/1470/1470120.png" alt="cpu">
+                <h3>GPU</h3>
+                <button type="button" id="gpu" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/1689/1689137.png" alt="cpu">
+                <h3>RAM</h3>
+                <button type="button" id="ram" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/1969/1969572.png" alt="cpu">
+                <h3>HDD</h3>
+                <button type="button" id="hdd" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/2286/2286814.png" alt="cpu">
+                <h3>SSD</h3>
+                <button type="button" id="ssd" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.freepik.com/512/1/1480.png" alt="cpu">
+                <h3>Computer Case</h3>
+                <button type="button" id="computerCase" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/7568/7568226.png" alt="cpu">
+                <h3>Power Supply</h3>
+                <button type="button" id="powerSupply" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+            <div class="component">
+                <img src="https://cdn-icons-png.flaticon.com/512/3474/3474360.png" alt="cpu">
+                <h3>Monitor</h3>
+                <button type="button" id="monitor" (click)="onModalOpen(modal, $event)">Choose</button>
+            </div>
+        </div>
+        <div>
+            <button type="button" (click)="goToPayment()">
+                <h1>ORDER</h1>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<div #modal class="modal">
+    <div class="modal-content">
+        <button type="button" (click)="modal.style.display='none'">Close</button>
+        <div class="products-list">
+            @for (product of products; track $index) {
+            <div class="product-card">
+                <img [src]="product.images[0]" alt="Product Image" class="product-image">
+                <div class="product-details">
+                    <h2 class="product-name">{{product.name}}</h2>
+                    <p class="product-price">${{product.price.sale}}</p>
+                    <button class="choose-button" (click)="choose(product)">Choose</button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

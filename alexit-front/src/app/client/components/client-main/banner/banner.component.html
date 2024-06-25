@@ -1,0 +1,19 @@
+<div class="carousel">
+    <div class="carousel-inner" [ngStyle]="{'transform': 'translateX(-'+ currentIndex*100 +'%)'}">
+        <!-- <div *ngFor="let offer of offers" class="carousel-item"
+            [routerLink]="['offers/offer', offer.category.name, offer._id]"
+            [queryParams]="{offerTitle: offer.title, which: offer.category._id}">
+            <h2>{{offer.title}}</h2>
+            <img [src]="offer.featuredImage" alt="Slide">
+        </div> -->
+    </div>
+
+    <div class="carousel-dots">
+        <span *ngFor="let offer of offers; let i = index" class="dot" [class.active]="i === currentIndex"
+            (click)="jumpTo(i)"></span>
+    </div>
+
+
+    <button (click)="prev()" class="carousel-control prev">Previous</button>
+    <button (click)="next()" class="carousel-control next">Next</button>
+</div>

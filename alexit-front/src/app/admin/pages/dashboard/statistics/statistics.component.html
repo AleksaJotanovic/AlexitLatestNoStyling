@@ -1,0 +1,69 @@
+<div class="statistics-container">
+    <div class="statistics-header">
+        <div>
+            <h2>Statistics</h2>
+        </div>
+        <div>
+            <select [(ngModel)]="yearFilter" (change)="emitOnYearFilter()">
+                <option [ngValue]="0" selected disabled hidden>Year</option>
+                <option [ngValue]="lastYear()">Year</option>
+                @for (year of years; track $index) {
+                <option [ngValue]="year">{{year}}</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="statistics-body">
+        <div class="absolute-div">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="stat-nums">
+            <div>
+                <h6>1000k</h6>
+            </div>
+            <div>
+                <h6>800k</h6>
+            </div>
+            <div>
+                <h6>600k</h6>
+            </div>
+            <div>
+                <h6>400k</h6>
+            </div>
+            <div>
+                <h6>200k</h6>
+            </div>
+            <div>
+                <h6>0</h6>
+            </div>
+        </div>
+        <div class="statistics">
+            @for (stat of statistics; track $index) {
+            @if (stat.total < 1000000) { <div class="bar" [ngStyle]="{'height': barHeight(stat.total)}">
+                <div>
+                    <h6>{{money(stat.total)}}</h6>
+                </div>
+        </div>
+        }
+        @else if (stat.total >= 1000000) {
+        <div class="bar" [ngStyle]="{'height': '100%'}">
+            <div>
+                <h6>{{money(stat.total)}}</h6>
+            </div>
+        </div>
+        }
+        }
+    </div>
+</div>
+<div class="months-body">
+    <div class="months">
+        @for (stat of statistics; track $index) {
+        <h6>{{stat.month}}</h6>
+        }
+    </div>
+</div>
+</div>

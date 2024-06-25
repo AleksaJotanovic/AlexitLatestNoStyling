@@ -1,0 +1,19 @@
+<a routerLink="blog-editor">Go To Blog Editor</a>
+<section>
+    @for (blog of blogs; track $index) {
+    <div class="blog-card">
+        <picture [routerLink]="['blog-editor', blog._id]">
+            <img [src]="blog.featuredImage">
+        </picture>
+        <div class="blog-content">
+            <h5>{{blog.title}}</h5>
+            @if (blog.published) {
+            <h6>Published</h6>
+            }@else {
+            <h6>Not published</h6>
+            }
+            <h5>{{topicName(blog.topic_id)}}</h5>
+        </div>
+    </div>
+    }
+</section>

@@ -1,0 +1,88 @@
+<form [formGroup]="userForm" (ngSubmit)="saveUserChanges()">
+    <div class="container">
+        <div class="input-div">
+            <input type="text" formControlName="username">
+        </div>
+        <div class="input-div">
+            <input type="text" formControlName="firstname">
+        </div>
+        <div class="input-div">
+            <input type="text" formControlName="lastname">
+        </div>
+        <div class="input-div">
+            <input type="email" formControlName="email">
+        </div>
+    </div>
+    <div class="container" formGroupName="shippingAddress">
+        <h1>Address</h1>
+        <div class="input-div">
+            <input type="text" formControlName="country">
+        </div>
+        <div class="input-div">
+            <input type="text" formControlName="city">
+        </div>
+        <div class="input-div">
+            <input type="text" formControlName="street">
+        </div>
+        <div class="input-div">
+            <input type="text" formControlName="zip">
+        </div>
+        <div class="input-div">
+            <input type="text" formControlName="phone">
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body" formGroupName="creditCard">
+                <h2 class="card-title">Credit Card Payment</h2>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" formControlName="number" class="form-control" required
+                        mask="0000-0000-0000-0000" [showMaskTyped]="true" [showTemplate]="true">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" id="expiryDate" formControlName="expiryDate" class="form-control" required
+                            mask="00/00" [showMaskTyped]="true" [showTemplate]="true" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" formControlName="cvv" class="form-control" required mask="000"
+                            [showMaskTyped]="true" [showTemplate]="true" placeholder="XXX">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn">Save Changes</button>
+</form>
+<form [formGroup]="passwordForm" (ngSubmit)="savePassword()">
+    <h1>Change password</h1>
+    <div class="container">
+        <div class="input-div">
+            <input type="password" placeholder="Enter your current password" formControlName="currentPassword"
+                (input)="checkCurrentPassword()">
+            @if (!passwordMatching) {
+            <span style="color: red;">First, input your current password!</span>
+            }
+        </div>
+        <div class="input-div">
+            <input type="password" placeholder="Enter your new password" formControlName="newPassword">
+            @if (!newPasswordValue) {
+            <span>Please input password</span>
+            }
+            @if (newPasswordControl?.invalid) {
+            <span style="color: red;">{{getNewPasswordError()}}</span>
+            }
+        </div>
+        <div class="input-div">
+            <input type="password" placeholder="Confirm password" formControlName="confirmPassword">
+            @if (confirmPasswordControl?.invalid) {
+            <span style="color: red;">Password do not match!</span>
+            }
+        </div>
+        <button type="submit" [ngClass]="disableButton() ? 'btn-disabled' : 'btn'" [disabled]="disableButton()">Save
+            Password</button>
+    </div>
+</form>

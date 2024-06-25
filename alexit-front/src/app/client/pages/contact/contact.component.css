@@ -1,0 +1,49 @@
+.contact-section {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 600px;
+}
+
+h2 {
+    color: #ff5a5f;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+button[type="submit"] {
+    background-color: #ff5a5f;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    /* Change to desired color */
+    color: #666;
+    /* Change to desired color */
+    cursor: not-allowed;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff3b3f;
+}

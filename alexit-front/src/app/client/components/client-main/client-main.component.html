@@ -1,0 +1,29 @@
+<section #mainsect class="animated" id="animated">
+    <div>
+        <h1>BASIC INFO WITH ANIMATIONS</h1>
+    </div>
+    <div>
+        <button type="button" (click)="navigateToSection('banner')">Banner Section</button>
+        <button type="button" (click)="navigateToSection('discounts')">Discounts Section</button>
+        <button type="button" (click)="navigateToSection('configurator-link')">Configurator Section</button>
+        <button type="button" (click)="navigateToSection('latest-blogs')">Latest Blogs Section</button>
+        <button type="button" (click)="navigateToSection('about')">About Us Section</button>
+    </div>
+</section>
+
+
+<section #mainsect class="banner" id="banner">
+    <banner />
+</section>
+<section #mainsect class="discounts" id="discounts">
+    <products-on-discount />
+</section>
+<section #mainsect class="configurator-link" id="configurator-link">
+    <h1>WE HAVE CONFIGURATOR</h1>
+</section>
+<section #mainsect class="latest-blogs" id="latest-blogs">
+    <h1>OUR LATEST BLOGS</h1>
+</section>
+<section #mainsect class="last-section" id="about">
+    <h1>ABOUT US</h1>
+</section>

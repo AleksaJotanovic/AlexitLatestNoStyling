@@ -1,0 +1,24 @@
+<table class="zui-table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Parent</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (category of categories; track $index) {
+        <tr>
+            <td><img #img [src]="category.image" alt="..." width="50" height="50"></td>
+            <td>{{category.name}}</td>
+            <td>{{category.parent.name}}</td>
+            <td>
+                <button type="button" (click)="emitOnCategoryEdit(category._id)">Edit</button>
+                <button type="button" (click)="emitOnCategoryDelete(category._id)">Delete</button>
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>

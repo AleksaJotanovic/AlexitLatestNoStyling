@@ -1,0 +1,12 @@
+@if (order !== undefined) {
+<div class="order-body">
+
+    <order-details [order]="order" [orderStatusList]="orderStatusList" (onUpdate)="update($event)"
+        (onSaleGenerate)="generateSale()" />
+
+    <accounting [order]="order" (onAccountingSend)="sendAccountingPdf()" (onPdfView)="viewAccountingPdf()"
+        [cashier]="cashier" />
+
+    <items [order]="order" />
+</div>
+}

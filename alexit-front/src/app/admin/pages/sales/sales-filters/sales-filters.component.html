@@ -1,0 +1,26 @@
+<div class="sales-filters">
+    <div class="form">
+        <div>
+            <select [(ngModel)]="categoryFilter" (change)="emitOnCategoryFilter()">
+                <option ngValue="">All Categories</option>
+                @for (category of (categories | ctgIf); track $index) {
+                <option [ngValue]="category._id">{{category.name}}</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label for="articleCode">Code:</label>
+            <input type="text" id="articleCode" [(ngModel)]="codeFilter" (change)="emitOnCodeFilter()">
+        </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="nameFilter" (change)="emitOnNameFilter()">
+        </div>
+        <div>
+            <label>For period:</label>
+            <input type="date" [(ngModel)]="dateRange.from" (input)="emitOnDateRange()">
+            -
+            <input type="date" [(ngModel)]="dateRange.to" (input)="emitOnDateRange()">
+        </div>
+    </div>
+</div>

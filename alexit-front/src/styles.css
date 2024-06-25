@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+:root {
+    --default-website-width: 1400px;
+    --border-grey: #ebf2f5;
+    --main-black: #191919;
+    --night-black: #000000;
+    --main-white: #ffffff;
+    --light-grey: #d9d8dc;
+    --yellow-dark: #f5b301;
+    --yellow-light: #ffce00;
+    --dark-medium: #3e4057;
+    --dark-hard: #353546;
+    --dark-light: #5b5b69;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    letter-spacing: 1px;
+}
+
+li {
+    display: flex;
+}
+
+hr {
+    border: none;
+}
+
+
+section {
+    background-color: var(--main-white);
+}

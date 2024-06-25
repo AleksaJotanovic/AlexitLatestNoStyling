@@ -1,0 +1,16 @@
+<div class="login-body">
+    <div class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+            <div class="col">
+                <label>Email:</label>
+                <input type="text" formControlName="email">
+            </div>
+            <div class="col">
+                <label>Password:</label>
+                <input type="password" formControlName="password">
+            </div>
+            <button type="submit">Log In</button>
+            <a routerLink="/admin/forget-password">Forgot password?</a>
+        </form>
+    </div>
+</div>

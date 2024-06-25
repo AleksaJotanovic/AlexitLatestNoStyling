@@ -1,0 +1,47 @@
+.zui-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+    width: 100%;
+    table-layout: fixed;
+    table-layout: auto !important;
+}
+
+.zui-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 5px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+    width: auto !important;
+}
+
+.zui-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    text-shadow: 1px 1px 1px #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    text-align: center;
+    width: auto !important;
+}
+
+.zui-table img {
+    height: 50px;
+}
+
+.products-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem 2rem 1rem;
+}
+
+.table-options {
+    display: flex;
+    justify-content: space-between;
+}

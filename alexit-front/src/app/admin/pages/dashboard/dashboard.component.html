@@ -1,0 +1,31 @@
+@if (sales.length === 0) {
+<h1>LOADING...</h1>
+}@else if (sales.length > 0) {
+<div class="dashboard-container">
+    <div class="first">
+        <div class="averages">
+            <yearly-salary [yearlySalary]="yearlySalary" />
+            <monthly-salary [monthlySalary]="monthlySalary" />
+            <weekly-earnings [weeklyEarnings]="weeklyEarnings" />
+            <daily-earnings [dailyEarnings]="dailyEarnings" />
+        </div>
+        <div class="statistics">
+            <statistics [statistics]="statistics" [sales]="sales" (onYearFilter)="filterByYear($event)" />
+        </div>
+    </div>
+    <div class="second">
+        <div>
+            <total-earnings [totalEarnings]="totalEarnings" />
+        </div>
+        <div>
+            <page-views [pageViews]="pageViews" />
+        </div>
+        <div>
+            <total-customers [totalCustomers]="totalCustomers" />
+        </div>
+    </div>
+    <div class="third">
+        <latest-orders [orders]="orders" />
+    </div>
+</div>
+}

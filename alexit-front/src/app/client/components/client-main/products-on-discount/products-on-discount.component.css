@@ -1,0 +1,76 @@
+@import url("https://css.gg/css");
+
+/* UNPKG */
+@import url("https://unpkg.com/css.gg/icons/icons.css");
+
+/* JSDelivr */
+@import url("https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css");
+
+
+
+.products-on-discount {
+    border: 3px solid blue;
+    width: 90vw;
+    height: 85vh;
+}
+
+.products-list {
+    border: 2px solid blue;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    justify-content: center;
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+}
+
+.product-card>img {
+    height: 120px;
+    width: 120px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-name {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.product-price {
+    margin: 0;
+    font-size: 16px;
+    color: red;
+}
+
+.choose-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.choose-button:hover {
+    background-color: #45a049;
+}

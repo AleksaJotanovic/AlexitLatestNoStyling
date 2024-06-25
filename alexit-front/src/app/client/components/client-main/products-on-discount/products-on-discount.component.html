@@ -1,0 +1,14 @@
+<div class="products-on-discount">
+    <div class="products-list">
+        <div class="product-card" *ngFor="let product of products">
+            <img [src]="product.images[0]" alt="Product Image" class="product-image"
+                [routerLink]="['/product', product._id, product.name]">
+            <div class="product-details">
+                <h2 class="product-name">{{product.name}}</h2>
+                <p class="product-price"><s>{{$.money(product.price.sale)}}</s></p>
+                <p class="product-price">{{$.money($.subtractPercentage(product.price.sale,
+                    product.price.onDiscount.rate))}}</p>
+            </div>
+        </div>
+    </div>
+</div>

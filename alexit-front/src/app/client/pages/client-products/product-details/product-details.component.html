@@ -1,0 +1,20 @@
+@if (product) {
+<div class="product-details">
+    <div class="hero-image">
+        <img [src]="product.images[0]" alt="Product Image">
+    </div>
+    <div class="product-info">
+        <h1>{{product.name}}</h1>
+        <p class="price">{{price(product.price.sale)}}</p>
+        <div class="options">
+            <select>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+        <button type="button" (click)="addToCart(product)" class="add-to-cart">Add to Cart</button>
+        <button type="button" class="buy-now" (click)="addToFavorites(product._id)">Add To Favorites</button>
+    </div>
+</div>
+}

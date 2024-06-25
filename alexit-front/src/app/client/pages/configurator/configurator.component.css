@@ -1,0 +1,118 @@
+.configurator {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.configurator>.specs {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 50%;
+}
+
+.component {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.component>img {
+    height: 100px;
+    width: 100px;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+}
+
+.product-card>img {
+    height: 150px;
+    width: 150px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-name {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.product-price {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.choose-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.choose-button:hover {
+    background-color: #45a049;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    justify-content: center;
+    gap: 3rem;
+}

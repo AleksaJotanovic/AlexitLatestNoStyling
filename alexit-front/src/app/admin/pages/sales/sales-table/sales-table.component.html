@@ -1,0 +1,64 @@
+<table>
+    <thead>
+        <tr>
+            <th>Group</th>
+            <th>UOM</th>
+            <th>Article code</th>
+            <th>Article name</th>
+            <th>Quantity</th>
+            <th>Purchase price</th>
+            <th>Margin</th>
+            <th>Price per UOM</th>
+            <th>Tax base</th>
+            <th>Vat rate</th>
+            <th>VAT</th>
+            <th>Sale value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (sale of (sales | saleByCtg: categoryFilter | saleByCode: codeFilter | saleByName: nameFilter); track
+        $index) {
+        <tr>
+            <td>{{sale.group.name}}</td>
+            <td>{{sale.uom}}</td>
+            <td>{{sale.articleCode}}</td>
+            <td>{{sale.articleName}}</td>
+            <td>{{sale.quantity}}</td>
+            <td>{{money(sale.purchasePrice)}}</td>
+            <td>{{sale.margin}}%</td>
+            <td>{{money(sale.pricePerUom)}}</td>
+            <td>{{money(sale.taxBase)}}</td>
+            <td>{{sale.vatRate}}%</td>
+            <td>{{money(sale.vat)}}</td>
+            <td>{{money(sale.saleValue)}}</td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="13">
+                <div class="summary">
+                    <div>
+                        <label for="quantity">Quantity:</label>
+                        <input id="quantity" type="text" [disabled]="true" [(ngModel)]="totals.quantity">
+                    </div>
+                    <div>
+                        <label for="taxBase">Tax base:</label>
+                        <input id="taxBase" type="text" [disabled]="true" [(ngModel)]="totals.taxBase">
+                    </div>
+                    <div>
+                        <label for="vatAmount">VAT:</label>
+                        <input id="vatAmount" type="text" [disabled]="true" [(ngModel)]="totals.vatAmount">
+                    </div>
+                    <div>
+                        <label for="saleValue">Sale value:</label>
+                        <input id="saleValue" type="text" [disabled]="true" [(ngModel)]="totals.saleValue">
+                    </div>
+                    <div>
+                        <button type="button" (click)="emitOnSalesReportPrint()">Print Sales Report</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,141 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 100%;
+    width: 100%;
+}
+
+.categories-form {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.categories-form div {
+    margin-bottom: 15px;
+}
+
+.categories-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.categories-form input[type="text"],
+.categories-form input[type="file"],
+.categories-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.categories-form input[type="text"]:focus,
+.categories-form input[type="file"]:focus,
+.categories-form select:focus {
+    border-color: #6200ea;
+    outline: none;
+}
+
+.categories-form button[type="button"],
+.categories-form button[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #6200ea;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.categories-form button[type="button"]:hover,
+.categories-form button[type="submit"]:hover {
+    background-color: #3700b3;
+}
+
+.values-creator {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.values-creator>div {
+    margin-bottom: 10px;
+}
+
+.values-creator label {
+    margin-bottom: 5px;
+    color: #6200ea;
+    font-weight: 500;
+}
+
+.values-creator input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: calc(100% - 18px);
+    margin-right: 10px;
+}
+
+.values-creator input[type="text"]:focus {
+    border-color: #6200ea;
+    outline: none;
+}
+
+.values-creator button[type="button"] {
+    background-color: #03dac5;
+    color: #000;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+.values-creator button[type="button"]:hover {
+    background-color: #018786;
+    color: white;
+}
+
+.image-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+picture {
+    width: 300px;
+    aspect-ratio: 1 / 1;
+}
+
+picture>img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .categories-form {
+        padding: 15px 20px;
+    }
+
+    .categories-form button[type="button"],
+    .categories-form button[type="submit"] {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}

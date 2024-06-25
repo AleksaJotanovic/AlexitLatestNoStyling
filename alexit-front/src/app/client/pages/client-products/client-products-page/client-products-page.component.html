@@ -1,0 +1,9 @@
+<section class="products-section">
+    <filters *ngIf="category" [category]="category" (onFilterSelect)="selectFilterOption($event)" />
+    <div class="products-list">
+        @for (product of products; track $index) {
+        <product-card [product]="product" (onAddToCart)="addToCart($event)"
+            (onAddToFavorites)="addToFavorites($event)" />
+        }
+    </div>
+</section>

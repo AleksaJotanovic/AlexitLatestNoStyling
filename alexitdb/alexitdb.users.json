@@ -1,0 +1,104 @@
+[{
+  "_id": "32948c27-d570-4e52-bb57-4b654d3f21ff",
+  "username": "AlexitAdmin024",
+  "firstname": "Aleksa",
+  "lastname": "Jotanovic",
+  "email": "jotanovicaleksa@gmail.com",
+  "password": "$2a$10$woJRtwbwIHYLLhs8oCCq9OlEU09p6q5Ofj8RbbbYwa.j0eUj3Rlcy",
+  "role": {
+    "_id": "ece96e0b-3bf4-4252-8d61-4aa840c89515",
+    "name": "Admin"
+  },
+  "shippingAddress": {
+    "country": "Serbia",
+    "city": "Futog",
+    "street": "Krajiska 14",
+    "zip": "21410",
+    "phone": "0658891631",
+    "email": "jotanovicaleksa@gmail.com"
+  },
+  "creditCard": {
+    "number": "",
+    "expiryDate": "",
+    "cvv": ""
+  },
+  "favoriteProducts": [],
+  "isAdmin": false,
+  "previouslyReviewed": [],
+  "purchaseHistory": [
+    {
+      "product": {
+        "category": {
+          "_id": "5eb8cc45-02bc-4682-a555-251734cb2435",
+          "name": "CPU"
+        },
+        "price": {
+          "onDiscount": {
+            "state": false,
+            "rate": 0
+          },
+          "margin": 30,
+          "purchase": 24700,
+          "regular": 32110,
+          "sale": 38532,
+          "earning": 9633
+        },
+        "_id": "af478c38-c1f1-43ff-9560-9c887e18c81e",
+        "name": "Aleks",
+        "uom": "asldj",
+        "sku": "a;lskdjf3",
+        "images": [
+          "http://localhost:3000/products/1718927142677-33192194.jpeg"
+        ],
+        "specifications": [
+          {
+            "key": "Manufacturer",
+            "value": "AMD"
+          },
+          {
+            "key": "Socket",
+            "value": "Socket AM5"
+          }
+        ],
+        "inStock": 13,
+        "weight": 2,
+        "garantee": "3",
+        "published": true
+      },
+      "date": "Fri Jun 21 2024 12:22:08 GMT+0200 (Central European Summer Time)",
+      "quantity": "4"
+    }
+  ],
+  "cart": [],
+  "newsletterSubscribed": false,
+  "previouslyViewed": []
+},
+{
+  "_id": "0456be05-46d2-45c4-905a-86a18e45f236",
+  "username": "Kurt01",
+  "firstname": "Kurt",
+  "lastname": "Vonnegut",
+  "email": "alexthecoder01@gmail.com",
+  "password": "$2a$10$Y8J3Tqz05Rx2N7wJcZTFSOq85dE2RF3lMH5FXEL8L/nal.ZW70rRC",
+  "role": {
+    "_id": "564b5e4a-1701-4256-be13-2cf87c5f0da8",
+    "name": "Customer"
+  },
+  "shippingAddress": {
+    "country": "USA",
+    "city": "Indianapolis, Indiana",
+    "street": "760 Avenue",
+    "zip": "92000",
+    "phone": "0556490787",
+    "email": "alexthecoder01@gmail.com"
+  },
+  "creditCard": {
+    "number": "",
+    "expiryDate": "",
+    "cvv": ""
+  },
+  "favoriteProducts": [],
+  "previouslyViewed": [],
+  "cart": [],
+  "purchaseHistory": []
+}]

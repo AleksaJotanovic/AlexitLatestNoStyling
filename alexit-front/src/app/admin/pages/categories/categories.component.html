@@ -1,0 +1,14 @@
+<div class="categories-body">
+    <div class="categories-header">
+        @if (category === undefined) {
+        <category-creator [categories]="categories" (onCategoryAdd)="add($event)" />
+        }@else{
+        <category-editor [categories]="categories" (onEditModeExit)="category = undefined" [category]="category"
+            (onUpdate)="update($event)" />
+        }
+    </div>
+    <div class="categories-container">
+        <categories-table [categories]="categories" (onCategoryDelete)="delete($event)"
+            (onCategoryEdit)="edit($event)" />
+    </div>
+</div>

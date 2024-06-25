@@ -1,0 +1,85 @@
+<div class="add-user-body">
+    <form [formGroup]="userForm" (ngSubmit)="emitOnUserSave(userForm)">
+        <div class="form-div">
+            <label for="username">Username: </label>
+            <input type="text" id="username" formControlName="username">
+        </div>
+        <div class="form-div">
+            <label for="firstname">Firstname: </label>
+            <input type="text" id="firstname" formControlName="firstname">
+        </div>
+        <div class="form-div">
+            <label for="lastname">Lastname: </label>
+            <input type="text" id="lastname" formControlName="lastname">
+        </div>
+        <div class="form-div">
+            <label for="email">Email: </label>
+            <input type="email" id="email" formControlName="email">
+        </div>
+
+        <!-------------------------------------------------------------------------->
+        <div class="form-div">
+            <label for="role">Role: </label>
+            <select formControlName="role_id" id="role">
+                <option value="" disabled selected>--select role--</option>
+                @for (role of roles; track $index) {
+                <option [ngValue]="role._id">{{role.name}}</option>
+                }
+            </select>
+        </div>
+        <!-------------------------------------------------------------------------->
+
+        <div class="form-div">
+            <label for="password">Password: </label>
+            <input type="password" id="password" formControlName="password">
+            @if (!passwordValue) {
+            <span>Please input password</span>
+            }
+            @if (passwordControl?.invalid) {
+            <span style="color: red;">{{getPasswordError()}}</span>
+            }
+        </div>
+        <div class="form-div">
+            <label for="confirm">Confirm password: </label>
+            <input type="password" id="confirm" formControlName="confirmPassword">
+            @if (confirmPasswordControl?.invalid) {
+            <span style="color: red;">Password do not match!</span>
+            }
+        </div>
+
+        <h2>Customer shipping address</h2>
+        <div formGroupName="shippingAddress">
+            <div class="form-div">
+                <label for="country">Country: </label>
+                <select formControlName="country" id="country">
+                    @for (country of countries; track $index) {
+                    <option [ngValue]="country">{{country}}</option>
+                    }
+                </select>
+            </div>
+            <div class="form-div">
+                <label for="city">City: </label>
+                <input type="text" id="city" formControlName="city">
+            </div>
+            <div class="form-div">
+                <label for="street">Street: </label>
+                <input type="text" id="street" formControlName="street">
+            </div>
+            <div class="form-div">
+                <label for="zip">Zip: </label>
+                <input type="text" id="zip" formControlName="zip">
+            </div>
+            <div class="form-div">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" formControlName="phone">
+            </div>
+            <div class="form-div">
+                <label for="email2">Email: </label>
+                <input type="email" id="email2" formControlName="email">
+            </div>
+        </div>
+
+
+        <button type="submit" [disabled]="!userForm.valid">Save User</button>
+    </form>
+</div>

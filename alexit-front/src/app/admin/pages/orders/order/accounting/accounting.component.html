@@ -1,0 +1,11 @@
+<div class="pdf-invoice">
+    @if (!order.accountingSent) {
+    <h1>Accounting:</h1>
+    <p>Cashier: {{cashier}}</p>
+    <p>For user: {{order.user.username}}</p>
+    <button type="button" (click)="emitOnAccountingSend()">Send Accounting PDF</button>
+    <button type="button" (click)="emitOnPdfView()">View PDF</button>
+    }@else if (order.accountingSent) {
+    <h1>ACCOUNTING IS SENT TO USER'S EMAIL ADDRESS!</h1>
+    }
+</div>

@@ -1,0 +1,109 @@
+<section class="blogs-main column-center-stretch">
+    <div class="blogs-header column-center-stretch">
+        <div class="breadcrumbs row-start-stretch">
+            <ul class="row-start-stretch">
+                <li class="lineheight-fit row-center">
+                    <a href="../../index.html" class="lineheight-fit">Home</a>
+                    <i class="fa-light fa-chevron-right"></i>
+                </li>
+                <li class="lineheight-fit row-center">
+                    <a href="../blogs/blogs.html" class="lineheight-fit">Blogs</a>
+                </li>
+            </ul>
+        </div>
+        <div class="title-search">
+            <h1 class="lineheight-fit">Blogs</h1>
+            <div class="search-filter">
+                <div class="row-center-stretch search-blogs">
+                    <input type="text" placeholder="Search by name, category, etc...">
+                    <button type="button" class="lineheight-fit row-center"><i
+                            class="fa-light fa-magnifying-glass"></i></button>
+                </div>
+                <div class="filters">
+                    <div class="categories-filters">
+                        <div class="categories-label row-center">
+                            <h1 class="lineheight-fit row-start"><i class="fa-light fa-list"></i> Categories
+                            </h1>
+                            <button type="button">
+                                <i class="fa-light fa-angle-down"></i>
+                            </button>
+                        </div>
+                        <div class="ctg-dropdown">
+                            <ul class="column-center-start">
+                                <li><a href="#">All</a></li>
+                                <li><a href="#">Gaming</a></li>
+                                <li><a href="#">Programming</a></li>
+                                <li><a href="#">ComputersIT</a></li>
+                                <li><a href="#">Youtube</a></li>
+                                <li><a href="#">MediaJournalism</a></li>
+                                <li><a href="#">Movies</a></li>
+                                <li><a href="#">Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="selectmenu column-center-stretch">
+                        <div class="selectmenu-label row-center">
+                            <h1 class="lineheight-fit">Sort By</h1>
+                            <button type="button">
+                                <i class="fa-light fa-angle-down"></i>
+                            </button>
+                        </div>
+                        <div class="dropdown">
+                            <ul class="column-center-start">
+                                <li><a href="#">Date (Ascending)</a></li>
+                                <li><a href="#">Date (Descending)</a></li>
+                                <li><a href="#">Comments (Most to least)</a></li>
+                                <li><a href="#">Comments (Least to most)</a></li>
+                                <li><a href="#">Title (Alphabetical)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blogs-container">
+        <div class="blog-categories">
+            <h1 class="lineheight-fit row-center"><i class="fa-light fa-list"></i><span>CATEGORIES</span></h1>
+            <ul class="column-start-start">
+                <li class="lineheight-fit">All</li>
+                <li class="lineheight-fit">Gaming</li>
+                <li class="lineheight-fit">Programming</li>
+                <li class="lineheight-fit">ComputersIT</li>
+                <li class="lineheight-fit">Youtube</li>
+                <li class="lineheight-fit">MediaJournalism</li>
+                <li class="lineheight-fit">Movies</li>
+                <li class="lineheight-fit">Events</li>
+            </ul>
+        </div>
+        <div class="blogs-list">
+            @for (blog of blogs; track $index) {
+            <div class="quantum-card column-start-stretch">
+                <div class="quantum-image column-spacebetween-center"
+                    style="background-image: url('../../images/blogs/image1.jpg');"
+                    [ngStyle]="{'background-image': 'url(' + blog.featuredImage + ')'}">
+                    <div class="blog-date column-center-center"><span>01.</span><span>June</span></div>
+                    <span>{{topicName(blog.topic_id)}}</span>
+                </div>
+                <div class="blog-content column-start-stretch">
+                    <h1>{{blog.title}}</h1>
+                    <hr>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est libero illo error, tempore
+                        ut porro accusamus fugit facere odit temporibus harum laborum, obcaecati repellendus ad
+                        animi molestias voluptate minus! Ipsum ea quaerat enim dolor vero mollitia quis sit
+                        dignissimos eius natus nobis consequuntur unde at asperiores cupiditate nulla maxime
+                        similique veniam voluptate officiis dolorem blanditiis, nemo facere quibusdam. Eaque at
+                        exercitationem excepturi aliquam iure dolores corrupti facilis cum, placeat explicabo!
+                    </p>
+                    <div class="blog-footer row-space-between">
+                        <div class="row-center"><span><i class="fa-light fa-timer"></i> 8 min ago</span><span><i
+                                    class="fa-light fa-messages"></i> comments</span></div>
+                        <a [routerLink]="['blog', blog._id, blog.title]" class="lineheight-fit">READ <i
+                                class="fa-solid fa-circle-chevron-down"></i></a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

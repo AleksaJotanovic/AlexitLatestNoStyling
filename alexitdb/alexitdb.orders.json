@@ -1,0 +1,46 @@
+[{
+  "_id": "eef25304-bbe9-482e-9199-2c194d02216c",
+  "number": "1548",
+  "user": {
+    "_id": "352a7ffc-7d89-4b3d-b681-ec1b3c48858e",
+    "username": "M.Shadows_A7X",
+    "note": "Please be carefull with my package"
+  },
+  "courier": {
+    "_id": "fe1c8ce2-2bb9-4012-89e2-03e1a3f25f86",
+    "name": "Post Express"
+  },
+  "pcBuild": false,
+  "pcBuildName": "",
+  "status": "Completed",
+  "paymentMethod": {
+    "creditCard": false,
+    "cashOnDelivery": true
+  },
+  "paid": false,
+  "shipping": {
+    "country": "USA",
+    "city": "Huntington Beach, CA",
+    "street": "365 Avenue",
+    "zip": "99200",
+    "phone": "026 6688704",
+    "email": "alexthecoder01@gmail.com"
+  },
+  "items": [
+    {
+      "product_id": "6c5b952a-f4a7-422c-ba9f-fc1fb2a628ac",
+      "image": "http://localhost:3000/products/1719049725901-414930734.png",
+      "name": "Aleksa",
+      "price": 1020985,
+      "quantity": 5,
+      "weight": 4.5
+    }
+  ],
+  "weight": 4.5,
+  "subtotal": 1020985,
+  "shippingCost": 550,
+  "grandTotal": 1021535,
+  "creationTime": "Sat Jun 22 2024 12:07:58 GMT+0200 (Central European Summer Time)",
+  "accountingSent": true,
+  "saleGenerated": false
+}]

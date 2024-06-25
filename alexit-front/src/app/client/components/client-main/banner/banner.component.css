@@ -1,0 +1,81 @@
+.carousel {
+    position: relative;
+    width: 1260px;
+    /* Set the width of the carousel */
+    height: 540px;
+    /* Set the height of the carousel */
+    overflow: hidden;
+    margin: 0 auto;
+    /* Center the carousel */
+}
+
+.carousel-inner {
+    display: flex;
+    width: calc(100% + 20px);
+    /* Adjust for the margin between items */
+    transition: transform 0.5s ease;
+    margin-top: 2rem;
+}
+
+.carousel-item {
+    flex: 0 0 1260px;
+    /* Set the width of each carousel item */
+    height: 100%;
+    /* Ensure each item takes the full height */
+    margin-right: 20px;
+    /* Adjust as needed for spacing between items */
+}
+
+.carousel-item:last-child {
+    margin-right: 0;
+    /* Remove margin from the last item */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    /* Maintain aspect ratio and cover the entire space */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}

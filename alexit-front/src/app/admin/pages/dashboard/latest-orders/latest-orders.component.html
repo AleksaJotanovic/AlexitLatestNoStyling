@@ -1,0 +1,17 @@
+<table class="zui-table">
+    <thead>
+        <th colspan="6">LATEST ORDERS</th>
+    </thead>
+    <tbody>
+        @for (order of orders; track $index) {
+        <tr>
+            <td>#{{order.number}}</td>
+            <td>{{order.user.username}}</td>
+            <td>{{order.items.length}} items</td>
+            <td>{{commas(order.grandTotal)}} RSD</td>
+            <td>{{createdAt(order)}}</td>
+            <td><button type="button" routerLink="orders">view</button></td>
+        </tr>
+        }
+    </tbody>
+</table>

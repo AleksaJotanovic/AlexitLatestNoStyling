@@ -1,0 +1,16 @@
+.categories-form {
+    display: flex;
+    justify-content: center;
+}
+
+.categories-form>form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.categories-form>form div {
+    display: flex;
+    flex-direction: column;
+}

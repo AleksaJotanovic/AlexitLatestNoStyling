@@ -1,0 +1,52 @@
+<div #modal class="modal">
+    <div class="modal-content">
+        <div class="categories-form">
+            <button type="button" (click)="emitOnEditModeExit()">exit edit mode</button>
+            <form [formGroup]="categoryForm" (ngSubmit)="emitOnUpdate(imageInput)">
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name" type="text" formControlName="name">
+                </div>
+                <div>
+                    <label for="parent">Parent Category</label>
+                    <select id="parent" formControlName="parent_id">
+                        <option ngValue="">--Parent Category--</option>
+                        @for (category of (categories | ptIf); track $index) {
+                        <option [ngValue]="category._id">{{category.name}}</option>
+                        }
+                    </select>
+                </div>
+
+                <div formArrayName="specifications" class="values-creator values-gap">
+                    <div *ngFor="let spec of specifications.controls; let specIndex = index" [formGroupName]="specIndex"
+                        class="values-creator">
+                        <label for="key">Specification Key</label>
+                        <input id="key" formControlName="key" />
+                        <div formArrayName="values" class="values-creator">
+                            <div *ngFor="let value of getValues(specIndex).controls; let valueIndex = index">
+                                <input [formControlName]="valueIndex" />
+                                <button type="button" (click)="removeValue(specIndex, valueIndex)">Remove Value</button>
+                            </div>
+                            <button type="button" (click)="addValue(specIndex)">Add Value</button>
+                        </div>
+                        <button type="button" (click)="removeSpecification(specIndex)">Remove Specification</button>
+                    </div>
+                    <button type="button" (click)="addSpecification()">Add Specification</button>
+                </div>
+
+
+
+                <div class="image-edit">
+                    <label>Image</label>
+                    <input #imageInput type="file" (change)="handleFileInput($event, image)">
+                    <picture>
+                        <img #image [src]="category?.image">
+                    </picture>
+                </div>
+                <div>
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="categories-form">
+    <form [formGroup]="categoryForm" (ngSubmit)="emitOnCategorySave(imageInput)">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+        <div>
+            <label for="parent">Parent Category</label>
+            <select id="parent" formControlName="parent_id">
+                <option ngValue="">--Parent Category--</option>
+                @for (category of (categories | ptIf); track $index) {
+                <option [ngValue]="category._id">{{category.name}}</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>Image</label>
+            <input #imageInput type="file">
+        </div>
+        <div>
+            <button type="submit">Save Category</button>
+        </div>
+    </form>
+</div>

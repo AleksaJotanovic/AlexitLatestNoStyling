@@ -1,0 +1,64 @@
+<div class="user-body">
+    <form [formGroup]="userForm" (ngSubmit)="update();">
+        <div class="form-div">
+            <label for="username">Username: </label>
+            <input type="text" id="username" formControlName="username">
+        </div>
+        <div class="form-div">
+            <label for="firstname">Firstname: </label>
+            <input type="text" id="firstname" formControlName="firstname">
+        </div>
+        <div class="form-div">
+            <label for="lastname">Lastname: </label>
+            <input type="text" id="lastname" formControlName="lastname">
+        </div>
+        <div class="form-div">
+            <label for="email">Email: </label>
+            <input type="email" id="email" formControlName="email">
+        </div>
+
+        <div class="form-div">
+            <label for="role">Role: </label>
+            <select formControlName="role_id" id="role">
+                @for (role of roles; track $index) {
+                <option [ngValue]="role._id">{{role.name}}</option>
+                }
+            </select>
+        </div>
+
+        <h2>Customer billing address</h2>
+        <div formGroupName="shippingAddress">
+            <div class="form-div">
+                <label for="country">Country: </label>
+                <select formControlName="country" id="country">
+                    <option ngValue="Serbia">Serbia</option>
+                    <option ngValue="Bosnia">Bosnia</option>
+                    <option ngValue="Croatia">Croatia</option>
+                    <option ngValue="Slovenia">Slovenia</option>
+                </select>
+            </div>
+            <div class="form-div">
+                <label for="city">City: </label>
+                <input type="text" id="city" formControlName="city">
+            </div>
+            <div class="form-div">
+                <label for="street">Street: </label>
+                <input type="text" id="street" formControlName="street">
+            </div>
+            <div class="form-div">
+                <label for="zip">Zip: </label>
+                <input type="text" id="zip" formControlName="zip">
+            </div>
+            <div class="form-div">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" formControlName="phone">
+            </div>
+            <div class="form-div">
+                <label for="email2">Email: </label>
+                <input type="email" id="email2" formControlName="email">
+            </div>
+        </div>
+
+        <button type="submit">Save User</button>
+    </form>
+</div>
